@@ -14,12 +14,12 @@ NoU_Drivetrain drivetrain(&FRMotor, &FLMotor, &BRMotor, &BLMotor);
 
 void setup() { 
     // 2. Change the team number
-    PestoLink.begin("Team 67");
+    PestoLink.begin("Team 59");
 
     // 3. Invert any motors that need to be inverted.
-    FRMotor.setInverted(false);
+    FRMotor.setInverted(true);
     FLMotor.setInverted(false);
-    BRMotor.setInverted(true);
+    BRMotor.setInverted(false);
     BLMotor.setInverted(false);
 
     RSL::initialize();
