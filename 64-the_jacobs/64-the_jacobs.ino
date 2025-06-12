@@ -39,10 +39,10 @@ void loop() {
 
     // Set specific servo angles below.
     if (PestoLink.buttonHeld(0)) {
-        claw.set(-0.75);
+        claw.set(-0.1);
     }
     else {
-        claw.set(0.75);
+        claw.set(0.1);
     }
 
     // Ignore this
