@@ -14,7 +14,7 @@ NoU_Drivetrain drivetrain(&FRMotor, &FLMotor, &BRMotor, &BLMotor);
 
 void setup() { 
     // 2. Change the team number
-    PestoLink.begin("27a");
+    PestoLink.begin("27");
 
     // 3. Invert any motors that need to be inverted.
     FRMotor.setInverted(true);
