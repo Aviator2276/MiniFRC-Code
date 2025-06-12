@@ -3,9 +3,9 @@
 
 // 1. Enter the port number of the motor to the corrosponding placement.
 // Add the servo port below. If there are none, ignore the line.
-NoU_Motor FRMotor(3);
+NoU_Motor FRMotor(4);
 NoU_Motor FLMotor(2);
-NoU_Motor BRMotor(4);
+NoU_Motor BRMotor(3);
 NoU_Motor BLMotor(1);
 NoU_Servo servo(1);
 
@@ -14,10 +14,10 @@ NoU_Drivetrain drivetrain(&FRMotor, &FLMotor, &BRMotor, &BLMotor);
 
 void setup() { 
     // 2. Change the team number
-    PestoLink.begin("Team 67");
+    PestoLink.begin("Team 23");
 
     // 3. Invert any motors that need to be inverted.
-    FRMotor.setInverted(true);
+    FRMotor.setInverted(false);
     FLMotor.setInverted(false);
     BRMotor.setInverted(true);
     BLMotor.setInverted(false);
@@ -36,7 +36,13 @@ void loop() {
 
     drivetrain.arcadeDrive(throttle, rotation);
 
-    
+    // Set specific servo angles below.
+    if (PestoLink.buttonHeld(0)) {
+        servo.write(180);
+    }
+    else {
+        servo.write(0);
+    }
 
     // Ignore this
     if (PestoLink.update()) {
